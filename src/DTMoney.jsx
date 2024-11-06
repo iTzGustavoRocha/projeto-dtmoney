@@ -29,8 +29,8 @@ function DTMoney(){
                 </div>
             </div>
             <form action="">
-                <input type="text" placeholder="Busque uma transação"/>
-                <button type="submit"> buscar</button>
+                <input className="barraPesquisaTransacao" type="text" placeholder="Busque uma transação"/>
+                <button className="botaoBuscarTransacao" type="submit"> buscar</button>
             </form>
             <div className="ListaTransacoes">
                 <span>transação de exemplo</span>
