@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 body{
-    background: rgb(34, 34, 34);
+    background: #202024;
     font-family: 'Roboto', sans-serif;
     
     
@@ -19,7 +19,7 @@ body{
 
 div.header{
     display: flex;
-    background: rgb(25, 24, 24);
+    background: #121214;
     height: 220px;
 
 }
@@ -27,7 +27,7 @@ div.header{
 h1.DTMoney{
     flex: 20px;
     color: rgb(255, 255, 255);
-    margin-left: 100px;
+    margin-left: 106px;
     margin-top: 34px;
 }
 
@@ -38,13 +38,11 @@ h1.DTMoney{
     width: 150px;
     margin-top: 34px;
     margin-bottom: 34px;
-    padding: 24p;
     border-radius: 6px;
     border-style: none;
     margin-right: 100px;
     font-weight: 600;
     font-size: 15px;
-    display: flex;
     justify-content: center;
     align-items:center ;
     
@@ -52,10 +50,14 @@ h1.DTMoney{
 }
 
 .movimentacoes{
-    display: flex;
     justify-content: space-between;
     margin-left: 100px;
     margin-right: 100px;
+    display: flex;
+    position: relative;
+    top: -75px;
+    
+    
     
     
     
@@ -68,6 +70,8 @@ h1.DTMoney{
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     height: 134px;
+    background: #323238;
+    
   
 }
 
@@ -79,6 +83,9 @@ h1.DTMoney{
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
+    position: relative;
+    top: 20px;
+    left: 20px;
     
 }
 
@@ -86,6 +93,9 @@ h1.DTMoney{
     font-size: 2rem;
     font-weight: bold;
     color: #ffffff;
+    position: relative;
+    top: 25px;
+    right: 53px;
     
 }
 
@@ -94,6 +104,7 @@ h1.DTMoney{
     width: 31%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    background: #323238;
 }
 
 
@@ -104,6 +115,10 @@ h1.DTMoney{
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    
     
 }
 
@@ -112,6 +127,10 @@ h1.DTMoney{
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+    position: relative;
+    top: 25px;
+    right: 53px;
+    
 }
 
 .total{
@@ -119,6 +138,7 @@ h1.DTMoney{
     width: 31%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    background:#015F43;
 }
 
 
@@ -129,6 +149,10 @@ h1.DTMoney{
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    
     
 }
 
@@ -137,6 +161,10 @@ h1.DTMoney{
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+    position: relative;
+    top: 25px;
+    right: 53px;
+    
 }
 
 
@@ -160,6 +188,7 @@ input{
 
 
 }
+
 
 
 
