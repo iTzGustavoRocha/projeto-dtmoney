@@ -66,7 +66,7 @@ h1.DTMoney{
 
 .entradas{
     border-radius: 8px;
-    width: 31%;
+    width: 32%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     height: 134px;
@@ -78,30 +78,38 @@ h1.DTMoney{
 
 .entradas h2{
     font-size: 15px;
-    color: #aaa8a8;
+    color: #C4C4CC;
     margin-bottom: 20px;
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
     position: relative;
-    top: 20px;
-    left: 20px;
+    top: 28px;
+    left: 25px;
     
+}
+
+.icon{
+    height: 25px;
+    position: relative;
+    bottom: 10px;
+    left: 125px;
+    color: #00b37e;
 }
 
 .entradas p{
     font-size: 2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #e1e1e6;
     position: relative;
-    top: 25px;
+    top: 2px;
     right: 53px;
     
 }
 
 .saidas{
     border-radius: 8px;
-    width: 31%;
+    width: 32%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     background: #323238;
@@ -110,32 +118,40 @@ h1.DTMoney{
 
 .saidas h2{
     font-size: 15px;
-    color: #aaa8a8;
+    color: #C4C4CC;
     margin-bottom: 20px;
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
     position: relative;
-    top: 20px;
-    left: 20px;
+    top: 28px;
+    left: 25px;
     
     
+}
+
+.iconSaida{
+    height: 25px;
+    position: relative;
+    bottom: 10px;
+    left: 125px;
+    color: #f75a68;
 }
 
 .saidas p{
     font-size: 2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #e1e1e6;
     margin: 0;
     position: relative;
-    top: 25px;
+    top: 2px;
     right: 53px;
     
 }
 
 .total{
     border-radius: 8px;
-    width: 31%;
+    width: 32%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     background:#015F43;
@@ -144,25 +160,33 @@ h1.DTMoney{
 
 .total h2{
     font-size: 15px;
-    color: #aaa8a8;
+    color: #C4C4CC;
     margin-bottom: 20px;
     text-align: initial;
     margin-left: 2px;
     font-weight: 400;
     position: relative;
-    top: 20px;
-    left: 20px;
+    top: 28px;
+    left: 25px;
     
     
+}
+
+.iconTotal{
+    height: 25px;
+    position: relative;
+    bottom: 10px;
+    left: 125px;
+    color: #ffffff;
 }
 
 .total p{
     font-size: 2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: #e1e1e6;
     margin: 0;
     position: relative;
-    top: 25px;
+    top: 2px;
     right: 53px;
     
 }
