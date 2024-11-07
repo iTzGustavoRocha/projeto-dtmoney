@@ -2,11 +2,13 @@
 body{
     background: rgb(34, 34, 34);
     font-family: 'Roboto', sans-serif;
-    margin: 0;
+    
+    
 }
 
 *{
-
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -18,43 +20,126 @@ body{
 div.header{
     display: flex;
     background: rgb(25, 24, 24);
+    height: 220px;
 
 }
 
 h1.DTMoney{
     flex: 20px;
     color: rgb(255, 255, 255);
-    margin-left: 15px;
+    margin-left: 100px;
+    margin-top: 34px;
 }
 
-button.BotaoNovaTransacao{
+.BotaoNovaTransacao{
     color: white;
     background: rgb(103, 150, 103);
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 4px;
+    height: 50px;
+    width: 150px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+    padding: 24p;
+    border-radius: 6px;
     border-style: none;
-    margin-right: 15px;
-
-}
-
-div.movimentacoes{
+    margin-right: 100px;
+    font-weight: 600;
+    font-size: 15px;
     display: flex;
-    margin: auto;
+    justify-content: center;
+    align-items:center ;
     
 
+}
+
+.movimentacoes{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right: 100px;
+    
+    
     
 }
-div.movimentacoes div{
-   
-    border-radius: 3px;
-    padding: 27px 60px;
-    margin: auto;
-    background: gray;
-    
-    
+
+
+.entradas{
+    border-radius: 8px;
+    width: 31%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    height: 134px;
+  
+}
+
+
+.entradas h2{
+    font-size: 15px;
+    color: #aaa8a8;
+    margin-bottom: 20px;
+    text-align: initial;
+    margin-left: 2px;
+    font-weight: 400;
     
 }
+
+.entradas p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    
+}
+
+.saidas{
+    border-radius: 8px;
+    width: 31%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+}
+
+
+.saidas h2{
+    font-size: 15px;
+    color: #aaa8a8;
+    margin-bottom: 20px;
+    text-align: initial;
+    margin-left: 2px;
+    font-weight: 400;
+    
+}
+
+.saidas p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.total{
+    border-radius: 8px;
+    width: 31%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+}
+
+
+.total h2{
+    font-size: 15px;
+    color: #aaa8a8;
+    margin-bottom: 20px;
+    text-align: initial;
+    margin-left: 2px;
+    font-weight: 400;
+    
+}
+
+.total p{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+
 form{
     width: 600px;
     display: flex;
@@ -75,5 +160,7 @@ input{
 
 
 }
+
+
 
 
