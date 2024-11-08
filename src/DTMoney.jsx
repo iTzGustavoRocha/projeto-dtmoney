@@ -53,22 +53,22 @@ function DTMoney(){
             <div className="ListaTransacoes">
                 <table className="tabelaTransacoes">
                     <tr className="itemTabelaTransacao">
-                        <td className="causaTransacao">exemplo de transacao</td>
-                        <td className="valorTransacao"> R$12.000,00</td>
-                        <td className="tipoTransacao">transacao de exemplo</td>
-                        <td className="dataTransacao">data de exemplo</td>
+                        <td className="causaTransacao">causa transaçao</td>
+                        <td className="valorTransacaoEntrada"> R$12.000,00</td>
+                        <td className="tipoTransacao">tipo transaçao</td>
+                        <td className="dataTransacao">03/09/2099</td>
+                    </tr>
+                    <tr>
+                        <td className="causaTransacao">Causa Transação</td>
+                        <td className="valorTransacaoSaida"> -R$59,00</td>
+                        <td className="tipoTransacao">Tipo Transação</td>
+                        <td className="dataTransacao">03/09/2099</td>
                     </tr>
                     <tr>
                         <td className="causaTransacao">exemplo de transacao</td>
                         <td className="valorTransacao"> R$12.000,00</td>
                         <td className="tipoTransacao">transacao de exemplo</td>
-                        <td className="dataTransacao">data de exemplo</td>
-                    </tr>
-                    <tr>
-                        <td className="causaTransacao">exemplo de transacao</td>
-                        <td className="valorTransacao"> R$12.000,00</td>
-                        <td className="tipoTransacao">transacao de exemplo</td>
-                        <td className="dataTransacao">data de exemplo</td>
+                        <td className="dataTransacao">03/09/2099</td>
                     </tr>
                 </table>
 

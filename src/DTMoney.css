@@ -27,13 +27,13 @@ div.header{
 h1.DTMoney{
     flex: 20px;
     color: rgb(255, 255, 255);
-    margin-left: 106px;
+    margin-left: 100px;
     margin-top: 34px;
 }
 
 .BotaoNovaTransacao{
     color: white;
-    background: rgb(103, 150, 103);
+    background: #00875f;
     height: 50px;
     width: 150px;
     margin-top: 34px;
@@ -47,6 +47,11 @@ h1.DTMoney{
     align-items:center ;
     
 
+}
+
+.BotaoNovaTransacao:hover{
+    background: #00b37e;
+    cursor: pointer;
 }
 
 .movimentacoes{
@@ -207,7 +212,7 @@ input{
     font-size: 15px;
     width: 100%;
     background: #121214;
-    padding-left: 20px;
+    padding-left: 17px;
     border: none;
     border-style: none;
     border-radius: 5px;
@@ -229,28 +234,52 @@ input{
     text-align:center;
     justify-content: center;
     gap: 10px;
-    
-    
-    
+  
+}
+
+.botaoBuscarTransacao:hover{
+    background: #00b37e;
+    color: #ffffff;
 }
 
 
 
 table{
-    background: #ffffff;
+    
+    display:inline-flexbox;
     margin: auto;
     margin-top: 20px;
-    height: 60px;
-    width: 84%;
+    height:90%;
+    width: 1065px;
+    border-radius: 7px;
+    
     
 }
 
 tr{
-    background: red;
-    text-align:center;
+    background: #29292e;
+    color: #C4C4CC;
+    display:flex;
+    padding:25px 43px;
+    padding-left: 20px;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+}
 
+td.causaTransacao{
     
 }
+
+td.valorTransacaoEntrada{
+    color: #00b37e;
+}
+
+td.valorTransacaoSaida{
+    color: #f75a68;
+}
+
 
 
 
