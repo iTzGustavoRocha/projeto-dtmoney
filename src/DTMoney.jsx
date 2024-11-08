@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -43,12 +44,33 @@ function DTMoney(){
 
                 </div>
             </div>
-            <form >
-                <input className="barraPesquisaTransacao" type="text" placeholder="Busque uma transação"/>
-                <button className="botaoBuscarTransacao" type="submit"> buscar</button>
-            </form>
+            <div>
+                <form >
+                    <input className="barraPesquisaTransacao" type="text" placeholder="Busque uma transação"/>
+                    <button className="botaoBuscarTransacao" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass}/> Buscar</button>
+                </form>
+            </div>
             <div className="ListaTransacoes">
-                <span>transação de exemplo</span>
+                <table className="tabelaTransacoes">
+                    <tr className="itemTabelaTransacao">
+                        <td className="causaTransacao">exemplo de transacao</td>
+                        <td className="valorTransacao"> R$12.000,00</td>
+                        <td className="tipoTransacao">transacao de exemplo</td>
+                        <td className="dataTransacao">data de exemplo</td>
+                    </tr>
+                    <tr>
+                        <td className="causaTransacao">exemplo de transacao</td>
+                        <td className="valorTransacao"> R$12.000,00</td>
+                        <td className="tipoTransacao">transacao de exemplo</td>
+                        <td className="dataTransacao">data de exemplo</td>
+                    </tr>
+                    <tr>
+                        <td className="causaTransacao">exemplo de transacao</td>
+                        <td className="valorTransacao"> R$12.000,00</td>
+                        <td className="tipoTransacao">transacao de exemplo</td>
+                        <td className="dataTransacao">data de exemplo</td>
+                    </tr>
+                </table>
 
             </div>
         </div>

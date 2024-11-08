@@ -20,7 +20,7 @@ body{
 div.header{
     display: flex;
     background: #121214;
-    height: 220px;
+    height: 200px;
 
 }
 
@@ -193,24 +193,63 @@ h1.DTMoney{
 
 
 form{
-    width: 600px;
+    
     display: flex;
-    height: 35px;
-    margin: 40px auto;
-    margin-bottom: 10px;
-
+    height: 55px;
+    width: 84%;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: -20px;
     
 }
 input{
     display: flex;
+    font-size: 15px;
     width: 100%;
-    background: #0b0b0b;
-    border:  none;
-    padding-left: 10px;
+    background: #121214;
+    padding-left: 20px;
+    border: none;
+    border-style: none;
     border-radius: 5px;
-    color: gray;
+}
+
+.botaoBuscarTransacao{
+    display:flex;
+    margin: auto;
+    font-weight: bold;
+    font-size: 15px;
+    border-color: #00b37e;
+    border-width: 1px;
+    border-style: solid;
+    background: #202024;
+    color: #00b37e;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding:18px 40px ;
+    text-align:center;
+    justify-content: center;
+    gap: 10px;
+    
+    
+    
+}
 
 
+
+table{
+    background: #ffffff;
+    margin: auto;
+    margin-top: 20px;
+    height: 60px;
+    width: 84%;
+    
+}
+
+tr{
+    background: red;
+    text-align:center;
+
+    
 }
 
 
