@@ -7,6 +7,7 @@ body{
 }
 
 *{
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,10 +18,17 @@ body{
 
 }
 
+.divpai{
+    height: 2000px;
+    width: 1000px;
+    
+}
+
 div.header{
     display: flex;
     background: #121214;
     height: 200px;
+    width: 1263px;
 
 }
 
@@ -40,11 +48,13 @@ h1.DTMoney{
     margin-bottom: 34px;
     border-radius: 6px;
     border-style: none;
-    margin-right: 100px;
+    margin-right: 16px;
     font-weight: 600;
     font-size: 15px;
     justify-content: center;
     align-items:center ;
+    transition: all 0.2s linear;
+    position: relative;
     
 
 }
@@ -52,6 +62,7 @@ h1.DTMoney{
 .BotaoNovaTransacao:hover{
     background: #00b37e;
     cursor: pointer;
+    
 }
 
 .movimentacoes{
@@ -59,23 +70,20 @@ h1.DTMoney{
     margin-left: 100px;
     margin-right: 100px;
     display: flex;
-    position: relative;
     top: -75px;
-    
-    
-    
-    
+    position: relative;
+    width: 1000px;
     
 }
 
 
 .entradas{
     border-radius: 8px;
-    width: 32%;
     text-align: center;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     height: 134px;
     background: #323238;
+    min-width: 32%;
     
   
 }
@@ -201,7 +209,7 @@ form{
     
     display: flex;
     height: 55px;
-    width: 84%;
+    width: 1000px;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: -20px;
@@ -234,6 +242,7 @@ input{
     text-align:center;
     justify-content: center;
     gap: 10px;
+    transition: all 0.2s linear;
   
 }
 
@@ -249,11 +258,12 @@ table{
     display:inline-flexbox;
     margin: auto;
     margin-top: 20px;
+    margin-left: 99px;
     height:90%;
-    width: 1065px;
+    width: 1000px;
     border-radius: 7px;
-    
-    
+    height: 1000px;
+
 }
 
 tr{
@@ -268,9 +278,7 @@ tr{
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
 }
 
-td.causaTransacao{
-    
-}
+
 
 td.valorTransacaoEntrada{
     color: #00b37e;

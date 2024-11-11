@@ -1,5 +1,6 @@
-import React from "react";
+import  { useState } from "react";
 import "./DTMoney.css";
+import Modal from './componets/modal';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -12,12 +13,17 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
 function DTMoney(){
+    const [openModal, setOpenModal] = useState(false)
+
+
     return(
+        
        
-        <div>
+        <div className="divPai">
             <div className="header">
                 <h1 className="DTMoney">DT Money</h1>
-                <button className="BotaoNovaTransacao" type="submit" >Nova transação</button>
+                <button onClick={() => setOpenModal(true)} className="BotaoNovaTransacao" >Nova transação</button>
+                
             </div>
             <div className="movimentacoes">
                 <div className="entradas" >
@@ -71,6 +77,11 @@ function DTMoney(){
                         <td className="dataTransacao">03/09/2099</td>
                     </tr>
                 </table>
+                <div>
+                    
+                    <Modal isOpen={openModal}/>
+                </div>
+                
 
             </div>
         </div>
