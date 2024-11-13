@@ -1,11 +1,13 @@
 import  { useState } from "react";
 import "./DTMoney.css";
 import Modal from './componets/modal';
+import "./componets/modal.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -51,7 +53,7 @@ function DTMoney(){
                 </div>
             </div>
             <div>
-                <form >
+                <form className="form">
                     <input className="barraPesquisaTransacao" type="text" placeholder="Busque uma transação"/>
                     <button className="botaoBuscarTransacao" type="submit"><FontAwesomeIcon icon={faMagnifyingGlass}/> Buscar</button>
                 </form>
@@ -79,7 +81,7 @@ function DTMoney(){
                 </table>
                 <div>
                     
-                    <Modal isOpen={openModal}/>
+                    <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
                 </div>
                 
 

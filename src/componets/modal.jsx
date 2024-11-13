@@ -1,49 +1,38 @@
 import 'react'
+import { faX } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
+import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 
 
-
-const BACKGROUND_STYLE = {
-    position: 'fixed',
-    top:'0',
-    bottom:'0',
-    left:'0',
-    right:'0',
-    backgroundColor: 'rgb(0,0,0, 0.7)',
-    zIndex: '1000',
-}
-
-const MODAL_STYLE ={
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%,-50%)',
-    padding: '150px',
-    backgroundColor: '#fff',
-    borderRadius: '7px'
-
-}
-
-export default function Modal({isOpen}) {
+export default function Modal({isOpen, setModalOpen}) {
 
     if(isOpen){
         return (
-            <div style={BACKGROUND_STYLE}>
-                <div style={MODAL_STYLE}>
-                    <h2>Nova transação</h2>
-                    <button>X</button>
+            <div className='backgroundModal'>
+                <div className='modalStyle'>
+                    <button className='fecharModal' onClick={setModalOpen}> < FontAwesomeIcon icon={faX}/> </button>
+
+                    <h2 className='tituloModal'>Nova transação</h2>
+
                     <div>
-                        <input type="text" />
-                        <input type="text" />
-                        <input type="text" />
+                        <form className='formModal'>
+                            <input className='inputModal' placeholder='Descrição' type="text" />
+                            <input className='inputModal' placeholder='Preço' type="text" />
+                            <input className='inputModal' placeholder='Categoria' type="text" />
+                        </form>
                     </div>
-                    <div>
-                        <button>Entranda</button>
-                        <button>Saída</button>
+                    <div className='botoesTipoTransacao'>
+                        <button className='botaoEntradaModal'><FontAwesomeIcon className="iconModal" icon={faCircleArrowUp} />Entranda  </button>
+                        <button className='botaoSaidaModal'><FontAwesomeIcon className="iconSaidaModal" icon={faCircleArrowDown} />Saída</button>
+                        <div className='divButtonCadastrar'>
+                            <button className='botaoCadastrarModal' >Cadastrar</button>
+                        </div>
+                    
+
                     </div>
-                    <div>
-                        <button>Cadastrar</button>
-                    </div>
+                    
                 </div>
             </div>
         )  
