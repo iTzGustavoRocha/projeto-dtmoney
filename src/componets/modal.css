@@ -81,6 +81,15 @@
     border: none;
     border-style: none;
     border-radius: 5px;
+    transition: all 0.2s linear; 
+    color: #ffffff;
+    
+}
+
+.inputModal:focus{
+    border-color: #00b37e;
+    border-width: 1px;
+    border-style: solid ;
 }
 
 .botoesTipoTransacao{
@@ -113,9 +122,14 @@
     border: none;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     justify-content: center;
-    
+    transition: all 0.2s linear;    
     
 
+
+}
+
+.botaoEntradaModal:hover{
+    background: #323238;
 
 }
 
@@ -143,6 +157,24 @@
     border: none;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     justify-content: center;
+    transition: all 0.2s linear;  
+}
+
+.botaoEntradaModal:focus{
+    background:#015f43;
+    color: #ffffff;
+}
+
+.botaoSaidaModal:hover{
+    background: #323238;
+}
+
+.botaoSaidaModal:focus{
+    color: #ffffff;
+    background: #aa2834;
+    
+    
+    
 }
 
 .iconSaidaModal{
@@ -153,6 +185,7 @@
     width: 20px;
     color: #f75a68;
 }
+
 
 .divButtonCadastrar{
     display: flex;
@@ -175,4 +208,10 @@
     font-weight:bolder;
     font-size: 16px;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    transition: all 0.2s linear;
+
+}
+
+.botaoCadastrarModal:hover{
+    background: #00b37e;
 }
