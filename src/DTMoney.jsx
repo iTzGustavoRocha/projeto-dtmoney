@@ -1,6 +1,6 @@
 import  { useState } from "react";
 import "./DTMoney.css";
-import Modal from './componets/modal';
+import Modal from "./componets/Modal";
 import "./componets/modal.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +15,17 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 
 function DTMoney(){
-    const [openModal, setOpenModal] = useState(false)
+    //abre e fecha modal ------------------
+    const [openModal, setOpenModal] = useState (false)
+    //----------------------
+
+    const [transactions, setTransactions] = useState([]);
+
+    //adicionar nova transacao a lista
+    const addTransaction = (transaction) => {
+        setTransactions([...transactions, transaction]);
+    };
+    
 
 
     return(
@@ -26,6 +36,12 @@ function DTMoney(){
                 <h1 className="DTMoney">DT Money</h1>
                 <button onClick={() => setOpenModal(true)} className="BotaoNovaTransacao" >Nova transação</button>
                 
+            </div>
+            <div>
+                <Modal 
+                    isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}
+                    onAddTransaction={addTransaction}
+                />
             </div>
             <div className="movimentacoes">
                 <div className="entradas" >
@@ -59,30 +75,34 @@ function DTMoney(){
                 </form>
             </div>
             <div className="ListaTransacoes">
-                <table className="tabelaTransacoes">
-                    <tr className="itemTabelaTransacao">
-                        <td className="causaTransacao">causa transaçao</td>
-                        <td className="valorTransacaoEntrada"> R$12.000,00</td>
-                        <td className="tipoTransacao">tipo transaçao</td>
-                        <td className="dataTransacao">03/09/2099</td>
-                    </tr>
-                    <tr>
-                        <td className="causaTransacao">Causa Transação</td>
-                        <td className="valorTransacaoSaida"> -R$59,00</td>
-                        <td className="tipoTransacao">Tipo Transação</td>
-                        <td className="dataTransacao">03/09/2099</td>
-                    </tr>
-                    <tr>
-                        <td className="causaTransacao">exemplo de transacao</td>
-                        <td className="valorTransacao"> R$12.000,00</td>
-                        <td className="tipoTransacao">transacao de exemplo</td>
-                        <td className="dataTransacao">03/09/2099</td>
-                    </tr>
-                </table>
                 <div>
+                    <table className="tabelaTransacoes">
+                        {transactions.map((transaction, index) =>(
+                            <tr className="itemTabelaTransacao"
+                            key={index}>
+                                <td className="causaTransacao">
+                                    {transaction.description}
+                                </td>
+                                
+                                <td className="valorTransacao"
+                                style={{
+                                    color: transaction.type === "expense" ? "#f75a68" : "#00b37e"
+                                }}> {transaction.preco}
+                                </td>
+                                
+                                <td className="categoriaTransacao">
+                                    {transaction.category}
+                                </td>
+                                <td className="data"></td>
+                            </tr> 
+                        ))}
+                        
+                    </table>
                     
-                    <Modal isOpen={openModal} setModalOpen={() => setOpenModal(!openModal)}/>
+                    
+                
                 </div>
+                
                 
 
             </div>
