@@ -19,7 +19,9 @@ function DTMoney(){
     const [openModal, setOpenModal] = useState (false)
     //----------------------
 
-    const [transactions, setTransactions] = useState([]);
+    const transactionsStorage = localStorage.getItem('transacoes');
+
+    const [transactions, setTransactions] = useState([transactionsStorage ? JSON.parse(transactionsStorage) : []]);
 
     //adicionar nova transacao a lista
     const addTransaction = (transaction) => {

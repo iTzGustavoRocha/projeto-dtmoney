@@ -16,22 +16,25 @@
     width:520px;
     height: 540px;
     transform: translate(-50%,-50%);
-    padding: 150px;
     background-color: #202024;
     border-radius: 7px;
-    display: flex;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 1);
     
 
 }
 
+.divTituloFechaModal{
+    display: block;
+    width: 100%;
+    
+}
+
 .tituloModal{
     color: #e1e1e6;
     position: relative;
-    top: -100px;
-    right: 148px;
-    height: 40px;
-    width: 300px;
+    top: 22px;
+    left: 40px;
+    width: 70%;
     white-space: nowrap;
     
     
@@ -39,15 +42,15 @@
 
 .fecharModal{
     background: none;
-    font-size: 19px;
+    font-size: 16px;
     border: none;
     color: #7C7C8A;
     position:relative;
-    bottom:135px;
-    left:313px;
+    left: 470px;
+    top:18px;
     height: 39px;
-    width: 35px;
-    padding: 10px;
+    width: 45px;
+    padding: 8px;
     border-radius: 7px;
     text-align: center;
     justify-content: center;
@@ -60,13 +63,18 @@
     background: #121214;
 }
 
+.divFormModal{
+    width: 100%;
+}
+
 .formModal{
-    display:inline-flexbox;
+    
     position: relative;
-    right: 315px;
-    bottom: 50px;
-    width: 440px;
-    border-radius: 7px;
+    top:45px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: auto;
+    border-radius: 8px;
     height: 220px;
     
 
@@ -97,24 +105,23 @@
 }
 
 
-.botoesTipoTransaca{
-   display: flex; 
-   justify-content: space-between;
+.botoesTipoTransacao{
+    
     position: relative;
-    left:755px;
-    top: 180px;
-    width: auto;
-    height: 40px;
+    top: 17px;
+    width: 100%;
+    height: 60px;
+    
+
 }
 
 .botaoEntradaModal{
 
-    width: 214px;
+    width: 48%;
     height: 60px;
-    margin-right: 13px;
+
     padding-bottom: 10px;
     border-radius: 6px;
-    font-weight:lighter;
     font-size: 15px;
     color: #c4c4c4;
     text-align: center;
@@ -144,12 +151,11 @@
 }
 
 .botaoSaidaModal{
-    width: 214px;
+    width: 48%;
     height: 60px;
-    margin-right: 13px;
-    border-radius: 6px;
+    margin-left: 17px;
     padding-bottom: 10px;
-    font-weight:lighter;
+    border-radius: 6px;
     font-size: 15px;
     color: #c4c4c4;
     text-align: center;
@@ -157,7 +163,7 @@
     border: none;
     box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
     justify-content: center;
-    transition: all 0.2s linear;  
+    transition: all 0.2s linear;    
 }
 
 .botaoEntradaModal:focus{
@@ -190,10 +196,10 @@
 .divButtonCadastrar{
     display: flex;
     position: relative;
-    right: 456px;
-    top: 90px;
-    width: 442px;
-    height: 55px;
+    top: 40px;
+    width: 100%;
+    height: 60px;
+    
 
     
     
