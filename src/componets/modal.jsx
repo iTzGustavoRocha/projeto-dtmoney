@@ -74,10 +74,12 @@ export default function Modal({isOpen, setModalOpen, onAddTransaction}) {
                            </div>
                             <div className='botoesTipoTransacao'>
                                 <button className='botaoEntradaModal'
+                                    type="button"
                                     onClick={() => setType("income")}>
                                     <FontAwesomeIcon className="iconModal" icon={faCircleArrowUp} />Entranda  
                                 </button>
                                 <button className='botaoSaidaModal'
+                                    type="button"
                                     onClick={() => setType("expense")}>
                                     <FontAwesomeIcon className="iconSaidaModal" icon={faCircleArrowDown} />Saída
                                 </button>

@@ -77,33 +77,38 @@ function DTMoney(){
                 </form>
             </div>
             <div className="ListaTransacoes">
-                <div>
-                    <table className="tabelaTransacoes">
-                        {transactions.map((transaction, index) =>(
-                            <tr className="itemTabelaTransacao"
-                            key={index}>
-                                <td className="causaTransacao">
-                                    {transaction.description}
-                                </td>
-                                
-                                <td className="valorTransacao"
-                                style={{
-                                    color: transaction.type === "expense" ? "#f75a68" : "#00b37e"
-                                }}> {transaction.preco}
-                                </td>
-                                
-                                <td className="categoriaTransacao">
-                                    {transaction.category}
-                                </td>
-                                <td className="data"></td>
-                            </tr> 
+                {
+                     transactions.length <1
+                     ?
+                     <p></p>
+                     :
+                     <table className="tabelaTransacoes">
+                     {transactions.map((transaction, index) =>(
+                         <tr className="itemTabelaTransacao"
+                         key={index}>
+                             <td className="causaTransacao">
+                                 {transaction.description}
+                             </td>
+                             
+                             <td className="valorTransacao"
+                             style={{
+                                 color: transaction.type === "expense" ? "#f75a68" : "#00b37e"
+                             }}>
+                                 R${transaction.preco}
+                             </td>
+                             
+                             <td className="categoriaTransacao">
+                                 {transaction.category}
+                             </td>
+                             <td className="data"></td>
+                         </tr> 
                         ))}
-                        
-                    </table>
-                    
-                    
+                     
+                     </table>
+
+                    }
+                   
                 
-                </div>
                 
                 
 
