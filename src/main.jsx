@@ -1,10 +1,8 @@
 import React  from 'react'
 import { createRoot } from 'react-dom/client'
-import DTMoney from './DTMoney'
+import App from '/src/componets/App.jsx'
 
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <DTMoney />
-  </React.StrictMode>,
-)
+ const root = createRoot(document.querySelector('#root'));
+ 
+root.render(<App />)

@@ -58,7 +58,7 @@ export default function Modal({isOpen, setModalOpen, onAddTransaction}) {
                             
                                     <input className='inputModal' 
                                     placeholder='Preço' 
-                                    type="text"
+                                    type="number"
                                     value={preco}
                                     onChange={(e) => setPreco(e.target.value)}
                                     required />
