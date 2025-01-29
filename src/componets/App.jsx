@@ -1,13 +1,15 @@
 import  { useState, useEffect } from "react";
 import "/src/styles/DTMoney.css";
-import Modal from "./Modal";
+import Modal from "./modal";
 import "/src/styles/modal.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import Header from "./header";
+import Resume from "./resume";
+import Header from "./header"
+
 
 
 
@@ -15,66 +17,63 @@ import Header from "./header";
 
 
 const App = () => {
-    //abre e fecha modal ------------------
-    const [openModal, setOpenModal] = useState (false)
-    //----------------------
+    // //abre e fecha modal ------------------
+    // const [openModal, setOpenModal] = useState (false)
+    // //----------------------
     
-      //useEffect(() => {
-       //   localStorage.setItem("transactions", JSON.stringify(transactions));
-      //}, [transactions]);
+    //   //useEffect(() => {
+    //    //   localStorage.setItem("transactions", JSON.stringify(transactions));
+    //   //}, [transactions]);
     
-    const data = localStorage.getItem("transactions");
-    const [transactions, setTransactions] = useState( data ? JSON.parse(data): []
-    );
+    // const data = localStorage.getItem("transactions");
+    // const [transactions, setTransactions] = useState( data ? JSON.parse(data): []
+    // );
 
-    const [entrada, setEntrada] = useState(0);
-    const [saida, setSaida] = useState(0);
-    const [total, setTotal] = useState(0); 
+    // // const [entrada, setEntrada] = useState(0);
+    // // const [saida, setSaida] = useState(0);
+    // // const [total, setTotal] = useState(0); 
     
 
-    useEffect(() => {
-        const entradasTotal = transactions
-            .filter((item) => item.expense)
-            .map((transaction) => Number(transaction.amount));
+    // useEffect(() => {
+    //     const entradasTotal = transactions
+    //         .filter((item) => item.expense)
+    //         .map((transaction) => Number(transaction.amount));
 
-        const saidasTotal = transactions
-            .filter((item) => !item.expense) 
-            .map((transaction) => Number(transaction.amount)); 
+    //     const saidasTotal = transactions
+    //         .filter((item) => !item.expense) 
+    //         .map((transaction) => Number(transaction.amount)); 
             
         
-        const saida = saidasTotal.reduce((acc, cur) => acc + cur, 0).toFixed(2);    
-        const entrada = entradasTotal.reduce((acc, cur) => acc + cur, 0).toFixed(2); 
+    //     const saida = saidasTotal.reduce((acc, cur) => acc + cur, 0).toFixed(2);    
+    //     const entrada = entradasTotal.reduce((acc, cur) => acc + cur, 0).toFixed(2); 
         
-        const total = Math.abs(entrada - saida).toFixed(2);
+    //     const total = Math.abs(entrada - saida).toFixed(2);
 
-        setEntrada(`R$ ${entrada}`);
-        setSaida(`R$ ${saida}`);
-        setTotal(`${Number(entrada) < Number(saida) ? "-" : ""} R$ ${total}`);
-
-
-        }, [transactions]);
+    //     setEntrada(`R$ ${entrada}`);
+    //     setSaida(`R$ ${saida}`);
+    //     setTotal(`${Number(entrada) < Number(saida) ? "-" : ""} R$ ${total}`);
 
 
+    //     }, [transactions]);
 
-    //adicionar nova transacao a lista
-    const addTransaction = (transaction) => {
-        setTransactions([...transactions, transaction]);
-    };
+
+
+    // //adicionar nova transacao a lista
+    // const addTransaction = (transaction) => {
+    //     setTransactions([...transactions, transaction]);
+    // };
     
 
 
     return(
         <>
             <Header />
+            <Resume />
         </>
         
        
         // <div className="divPai">
-        //     <div className="header">
-        //         <h1 className="DTMoney">DT Money</h1>
-        //         <button onClick={() => setOpenModal(true)} className="BotaoNovaTransacao" >Nova transação</button>
-                
-        //     </div>
+        //     
         //     <div>
         //         <Modal
                      

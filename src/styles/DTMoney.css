@@ -66,9 +66,12 @@ h1.DTMoney{
 }
 
 .movimentacoes{
-    justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
+    justify-content: space-around;
+    max-width: 1120px;
+    width: 98%;
+    margin: 0 auto;
+    margin-top: -75px;
+    gap: 20px;
     display: flex;
     top: -75px;
     position: relative;
