@@ -1,5 +1,6 @@
 
 import react from "react"
+<<<<<<< HEAD
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { faCircleArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -39,6 +40,25 @@ const Resume = () => {
 
                      </div>
                  </div>
+=======
+import * as C from "./styles";
+import ResumeItem from "../ResumeItem";
+import {
+    FaRegArrowAltCircleUp,
+    FaRegArrowAltCircleDown,
+    FaDollarSign,
+} from "react-icons/fa";
+
+const Resume = ({income, expense, total}) => {
+    return(
+        <C.Container>
+            <ResumeItem title="entradas" Icon={FaRegArrowAltCircleUp} value={income} />
+            <ResumeItem title="saidas"  Icon={FaRegArrowAltCircleDown} value={expense} />
+            <ResumeItem title="total" Icon={FaDollarSign} value={total} />
+            
+        </C.Container>     
+
+>>>>>>> 7bd0be5 (refeito styled-components)
     );
 }
 export default Resume;

@@ -1,4 +1,5 @@
 import  { useState, useEffect } from "react";
+<<<<<<< HEAD
 import "/src/styles/DTMoney.css";
 import Modal from "./modal";
 import "/src/styles/modal.css"
@@ -9,6 +10,15 @@ import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Resume from "./resume";
 import Header from "./header"
+=======
+
+import "/src/styles/modal.css"
+import "/src/styles/DTMoney.css"
+import Header from "./header";
+import GlobalStyle from "../styles/global";
+import Resume from "./resume";
+import Modal from "./modal";
+>>>>>>> 7bd0be5 (refeito styled-components)
 
 
 
@@ -18,6 +28,7 @@ import Header from "./header"
 
 const App = () => {
     // //abre e fecha modal ------------------
+<<<<<<< HEAD
     // const [openModal, setOpenModal] = useState (false)
     // //----------------------
     
@@ -62,11 +73,52 @@ const App = () => {
     // const addTransaction = (transaction) => {
     //     setTransactions([...transactions, transaction]);
     // };
+=======
+    const [openModal, setOpenModal] = useState (false);
+     
+    const data = localStorage.getItem("transaction");
+    const [transactionsList, setTransactionsList] = useState(
+        data ? JSON.parse(data) : []
+    );
+    const [income, setIncome] = useState(0);
+    const [expense, setExpense] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    // quando musar "transactionslist" refaz os calculos 
+    useEffect(() => {
+        const amountExpense = transactionsList
+            .filter((item) => item.expense)
+            .map((transaction) => Number(transaction.amount));
+
+        const amountIncome = transactionsList
+            .filter((item) => !item.expense)
+            .map((tarnsaction) => Number(transaction.amount));
+
+        const expense = amountExpense.reduce((acc, cur) => acc + cur, 0).toFixed(2);
+        const income = amountIncome.reduce((acc, cur) => acc + cur, 0).toFixed(2);
+
+        const total = Math.abs(income - expense).toFixed(2);
+
+        setIncome(`R$ ${income}`);
+        setExpense(`R$ ${expense}`);
+        setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);
+
+    }, [transactionsList]);
+
+    const handleAdd = (transaction) => {
+        const newArrayTransactions = [...transactionsList, transaction];
+        setTransactionsList(newArrayTransactions);
+
+        localStorage.setItem("transactions", JSONstringify(newArrayTransactions));
+
+    };
+>>>>>>> 7bd0be5 (refeito styled-components)
     
 
 
     return(
         <>
+<<<<<<< HEAD
             <Header />
             <Resume />
         </>
@@ -149,6 +201,20 @@ const App = () => {
 
         //     </div>
         // </div>
+=======
+            <Header  setOpenModal={setOpenModal}/>
+            <Resume income={income} expense={expense} total={total} />
+            <Modal 
+                isOpen={openModal} 
+                setModalOpen={() => setOpenModal(!openModal)}
+                handleAdd={handleAdd}
+            />
+            <GlobalStyle />
+            
+        </>
+        
+ 
+>>>>>>> 7bd0be5 (refeito styled-components)
     )
 }
 

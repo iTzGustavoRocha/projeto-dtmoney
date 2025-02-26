@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+=======
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+>>>>>>> 7bd0be5 (refeito styled-components)
 body{
     background: #202024;
     font-family: 'Roboto', sans-serif;
@@ -19,8 +23,13 @@ body{
 }
 
 .divpai{
+<<<<<<< HEAD
     height: 2000px;
     width: 1000px;
+=======
+    height: 100%;
+    width: 100%;
+>>>>>>> 7bd0be5 (refeito styled-components)
     
 }
 
@@ -28,7 +37,11 @@ div.header{
     display: flex;
     background: #121214;
     height: 200px;
+<<<<<<< HEAD
     width: 1263px;
+=======
+    width: 100%;
+>>>>>>> 7bd0be5 (refeito styled-components)
 
 }
 
@@ -65,11 +78,26 @@ h1.DTMoney{
     
 }
 
+<<<<<<< HEAD
+=======
+.resumeItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #29292e;
+    border-radius: 5px;
+    padding: 5px 15px;
+    width: 30%;
+}
+
+
+>>>>>>> 7bd0be5 (refeito styled-components)
 .movimentacoes{
     justify-content: space-around;
     max-width: 1120px;
     width: 98%;
     margin: 0 auto;
+<<<<<<< HEAD
     margin-top: -75px;
     gap: 20px;
     display: flex;
@@ -142,10 +170,17 @@ h1.DTMoney{
     position: relative;
     top: 28px;
     left: 25px;
+=======
+    margin-top: -50px;
+    gap: 20px;
+    display: flex;
+    top: -75px;
+>>>>>>> 7bd0be5 (refeito styled-components)
     
     
 }
 
+<<<<<<< HEAD
 .iconSaida{
     height: 25px;
     position: relative;
@@ -206,6 +241,17 @@ h1.DTMoney{
     right: 53px;
     
 }
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 7bd0be5 (refeito styled-components)
 
 
 .form{
@@ -293,4 +339,8 @@ td.valorTransacaoSaida{
 
 
 
+<<<<<<< HEAD
 
+=======
+ */
+>>>>>>> 7bd0be5 (refeito styled-components)
