@@ -76,7 +76,7 @@ const App = () => {
 =======
     const [openModal, setOpenModal] = useState (false);
      
-    const data = localStorage.getItem("transaction");
+    const data = localStorage.getItem("transactions");
     const [transactionsList, setTransactionsList] = useState(
         data ? JSON.parse(data) : []
     );
@@ -92,7 +92,7 @@ const App = () => {
 
         const amountIncome = transactionsList
             .filter((item) => !item.expense)
-            .map((tarnsaction) => Number(transaction.amount));
+            .map((transaction) => Number(transaction.amount));
 
         const expense = amountExpense.reduce((acc, cur) => acc + cur, 0).toFixed(2);
         const income = amountIncome.reduce((acc, cur) => acc + cur, 0).toFixed(2);

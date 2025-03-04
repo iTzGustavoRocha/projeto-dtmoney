@@ -25,7 +25,7 @@ const Form = ({handleAdd}) => {
             expense: isExpense,
         };
 
-        handleAdd(transactions);
+        handleAdd(transaction);
         
         setDesc("");
         setAmount("");
