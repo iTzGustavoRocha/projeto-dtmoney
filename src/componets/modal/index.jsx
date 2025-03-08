@@ -2,7 +2,7 @@ import React from "react";
 import * as C from "./styles";
 import Form from "../modal/form";
 
-const Modal = ({isOpen, setModalOpen, handleAdd}) => {
+const Modal = ({isOpen, setModalOpen, handleAdd, transactionsList, setTransactionsList}) => {
     if(isOpen) {
 
         return(
@@ -12,7 +12,7 @@ const Modal = ({isOpen, setModalOpen, handleAdd}) => {
                         <C.Title>Nova transação</C.Title>
                         <C.Close onClick={setModalOpen}> X</C.Close>
                     </C.Header>
-                    <Form  handleAdd={handleAdd}/>
+                    <Form  handleAdd={handleAdd} transactionsList={transactionsList} setTransactionsList={setTransactionsList}/>
                 </C.Container>
             </C.background>
         );

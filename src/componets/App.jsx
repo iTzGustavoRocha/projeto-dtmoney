@@ -6,8 +6,7 @@ import Header from "./header";
 import GlobalStyle from "../styles/global";
 import Resume from "./resume";
 import Modal from "./modal";
-
-
+import Grid from "./grid";
 
 
 
@@ -50,7 +49,7 @@ const App = () => {
         const newArrayTransactions = [...transactionsList, transaction];
         setTransactionsList(newArrayTransactions);
 
-        localStorage.setItem("transactions", JSONstringify(newArrayTransactions));
+        localStorage.setItem("transactions", JSON.stringify(newArrayTransactions));
 
     };
     
@@ -64,7 +63,11 @@ const App = () => {
                 isOpen={openModal} 
                 setModalOpen={() => setOpenModal(!openModal)}
                 handleAdd={handleAdd}
+                transactionsList={transactionsList} 
+                setTransactionsList={setTransactionsList}
+
             />
+            <Grid itens={transactionsList} setItens={setTransactionsList}/>
             <GlobalStyle />
             
         </>
