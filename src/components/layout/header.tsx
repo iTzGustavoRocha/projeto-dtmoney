@@ -8,7 +8,7 @@ interface HeaderProps {
 export const Header = ({ onOpenModal }: HeaderProps) => {
   return (
     <header className="bg-card border-b">
-      <div className="container mx-auto px-4 py-6">
+      <div className=" mx-auto px-4 py-10">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-foreground">DT Money</h1>
@@ -16,7 +16,7 @@ export const Header = ({ onOpenModal }: HeaderProps) => {
               Controle suas finanças de forma inteligente
             </p>
           </div>
-          <Button 
+          <Button
             onClick={onOpenModal}
             className="bg-primary hover:bg-primary/90 text-primary-foreground"
           >

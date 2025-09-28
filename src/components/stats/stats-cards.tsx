@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TrendingUp, TrendingDown, DollarSign } from "lucide-react";
 import { TransactionStats } from "@/lib/types";
-import { formatCurrency } from "@/lib/utils-finance";
 import { cn } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils-finance";
+import { DollarSign, TrendingDown, TrendingUp } from "lucide-react";
 
 interface StatsCardsProps {
   stats: TransactionStats;
@@ -41,24 +41,25 @@ export const StatsCards = ({ stats }: StatsCardsProps) => {
         </CardContent>
       </Card>
 
-      <Card className={cn(
-        "bg-card border shadow-lg",
-        balance >= 0 ? "bg-success/5 border-success/20" : "bg-destructive/5 border-destructive/20"
-      )}>
+      <Card className="bg-card border shadow-lg">
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium text-muted-foreground">
             Saldo
           </CardTitle>
-          <DollarSign className={cn(
-            "h-4 w-4",
-            balance >= 0 ? "text-success" : "text-destructive"
-          )} />
+          <DollarSign
+            className={cn(
+              "h-4 w-4",
+              balance >= 0 ? "text-success" : "text-destructive"
+            )}
+          />
         </CardHeader>
         <CardContent>
-          <div className={cn(
-            "text-2xl font-bold",
-            balance >= 0 ? "text-success" : "text-destructive"
-          )}>
+          <div
+            className={cn(
+              "text-2xl font-bold",
+              balance >= 0 ? "text-success" : "text-destructive"
+            )}
+          >
             {formatCurrency(balance)}
           </div>
         </CardContent>
