@@ -6,6 +6,7 @@
 All colors MUST be HSL.
 */
 
+/* Base variables for light/dark mode */
 @layer base {
   :root {
     --background: 210 40% 98%;
@@ -98,14 +99,45 @@ All colors MUST be HSL.
     --sidebar-border: 215 27.9% 16.9%;
     --sidebar-ring: 158 64% 52%;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
+  /* Body defaults */
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Utilities for custom colors and borders */
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+
+  .bg-background {
+    background-color: hsl(var(--background));
+  }
+
+  .text-foreground {
+    color: hsl(var(--foreground));
+  }
+
+  .bg-card {
+    background-color: hsl(var(--card));
+  }
+
+  .text-card-foreground {
+    color: hsl(var(--card-foreground));
+  }
+
+  .bg-popover {
+    background-color: hsl(var(--popover));
+  }
+
+  .text-popover-foreground {
+    color: hsl(var(--popover-foreground));
+  }
+}
+
+/* Global border for all elements (optional) */
+* {
+  @apply border-border;
 }

@@ -1,20 +1,35 @@
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { CalendarIcon, TrendingUp, TrendingDown } from "lucide-react";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { CATEGORIES, Transaction } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { TransactionFormData, transactionSchema } from "@/lib/validations";
-import { CATEGORIES } from "@/lib/types";
-import { Transaction } from "@/lib/types";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+import { CalendarIcon, TrendingDown, TrendingUp } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 
 interface TransactionFormProps {
   onSubmit: (data: Omit<Transaction, "id" | "createdAt">) => void;
@@ -22,8 +37,14 @@ interface TransactionFormProps {
   isLoading?: boolean;
 }
 
-export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFormProps) => {
-  const [selectedType, setSelectedType] = useState<"income" | "expense">("income");
+export const TransactionForm = ({
+  onSubmit,
+  onCancel,
+  isLoading = false,
+}: TransactionFormProps) => {
+  const [selectedType, setSelectedType] = useState<"income" | "expense">(
+    "income"
+  );
 
   const form = useForm<TransactionFormData>({
     resolver: zodResolver(transactionSchema),
@@ -49,13 +70,13 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
     form.reset();
   };
 
-  const availableCategories = selectedType === "income" 
-    ? CATEGORIES.income 
-    : CATEGORIES.expense;
+  const availableCategories =
+    selectedType === "income" ? CATEGORIES.income : CATEGORIES.expense;
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+        {/* Descrição */}
         <FormField
           control={form.control}
           name="description"
@@ -63,16 +84,14 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
             <FormItem>
               <FormLabel>Descrição</FormLabel>
               <FormControl>
-                <Input 
-                  placeholder="Ex: Salário, Supermercado..."
-                  {...field}
-                />
+                <Input placeholder="Ex: Salário, Supermercado..." {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
+        {/* Valor */}
         <FormField
           control={form.control}
           name="amount"
@@ -86,7 +105,9 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
                   min="0"
                   placeholder="0,00"
                   {...field}
-                  onChange={(e) => field.onChange(parseFloat(e.target.value) || 0)}
+                  onChange={(e) =>
+                    field.onChange(parseFloat(e.target.value) || 0)
+                  }
                 />
               </FormControl>
               <FormMessage />
@@ -95,6 +116,7 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
         />
 
         <div className="grid grid-cols-2 gap-4">
+          {/* Tipo */}
           <FormField
             control={form.control}
             name="type"
@@ -108,7 +130,8 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
                     onClick={() => field.onChange("income")}
                     className={cn(
                       "justify-start",
-                      field.value === "income" && "bg-success hover:bg-success/90"
+                      field.value === "income" &&
+                        "bg-success hover:bg-success/90"
                     )}
                   >
                     <TrendingUp className="h-4 w-4 mr-2" />
@@ -120,7 +143,8 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
                     onClick={() => field.onChange("expense")}
                     className={cn(
                       "justify-start",
-                      field.value === "expense" && "bg-destructive hover:bg-destructive/90"
+                      field.value === "expense" &&
+                        "bg-destructive hover:bg-destructive/90"
                     )}
                   >
                     <TrendingDown className="h-4 w-4 mr-2" />
@@ -132,32 +156,34 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
             )}
           />
 
+          {/* Categoria */}
           <FormField
             control={form.control}
             name="category"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Categoria</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value}>
-                  <FormControl>
+                <FormControl>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione uma categoria" />
                     </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    {availableCategories.map((category) => (
-                      <SelectItem key={category} value={category}>
-                        {category}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                    <SelectContent>
+                      {availableCategories.map((category) => (
+                        <SelectItem key={category} value={category}>
+                          {category}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
 
+        {/* Data */}
         <FormField
           control={form.control}
           name="date"
@@ -174,11 +200,9 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
                         !field.value && "text-muted-foreground"
                       )}
                     >
-                      {field.value ? (
-                        format(field.value, "PPP", { locale: ptBR })
-                      ) : (
-                        <span>Selecione uma data</span>
-                      )}
+                      {field.value
+                        ? format(field.value, "PPP", { locale: ptBR })
+                        : "Selecione uma data"}
                       <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                     </Button>
                   </FormControl>
@@ -200,6 +224,7 @@ export const TransactionForm = ({ onSubmit, onCancel, isLoading }: TransactionFo
           )}
         />
 
+        {/* Botões */}
         <div className="flex gap-3 pt-4">
           <Button
             type="button"

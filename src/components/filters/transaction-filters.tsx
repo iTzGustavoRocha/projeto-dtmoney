@@ -1,10 +1,15 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, FilterX } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { CATEGORIES } from "@/lib/types";
+import { FilterX, Search } from "lucide-react";
 
 export interface TransactionFilters {
   search: string;
@@ -26,10 +31,10 @@ export const TransactionFiltersComponent = ({
   };
 
   const handleTypeChange = (type: "all" | "income" | "expense") => {
-    onFiltersChange({ 
-      ...filters, 
-      type, 
-      category: type === "all" ? "all" : filters.category 
+    onFiltersChange({
+      ...filters,
+      type,
+      category: type === "all" ? "all" : filters.category,
     });
   };
 
@@ -45,13 +50,17 @@ export const TransactionFiltersComponent = ({
     });
   };
 
-  const availableCategories = filters.type === "income" 
-    ? CATEGORIES.income 
-    : filters.type === "expense" 
-    ? CATEGORIES.expense 
-    : [...CATEGORIES.income, ...CATEGORIES.expense];
+  const availableCategories =
+    filters.type === "income"
+      ? CATEGORIES.income
+      : filters.type === "expense"
+      ? CATEGORIES.expense
+      : [...CATEGORIES.income, ...CATEGORIES.expense];
 
-  const hasActiveFilters = filters.search || filters.type !== "all" || (filters.category && filters.category !== "all");
+  const hasActiveFilters =
+    filters.search ||
+    filters.type !== "all" ||
+    (filters.category && filters.category !== "all");
 
   return (
     <Card>
@@ -94,8 +103,8 @@ export const TransactionFiltersComponent = ({
             </SelectContent>
           </Select>
 
-          <Select 
-            value={filters.category} 
+          <Select
+            value={filters.category}
             onValueChange={handleCategoryChange}
             disabled={filters.type === "all"}
           >
