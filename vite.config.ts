@@ -17,5 +17,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: "/projeto-dtmoney/", // 🔑 ISSO AQUI é o que estava faltando
+  base: "./",
 }));
