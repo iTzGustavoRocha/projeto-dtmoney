@@ -10,7 +10,8 @@ export const Header = ({ onOpenModal }: HeaderProps) => {
     <header className="bg-card border-b">
       <div className=" mx-auto px-4 py-10">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="flex items-center gap-4">
+            <img src="IgniteSymbol.svg" alt="" />
             <h1 className="text-3xl font-bold text-foreground">DT Money</h1>
             <p className="text-sm text-muted-foreground mt-1">
               Controle suas finanças de forma inteligente
